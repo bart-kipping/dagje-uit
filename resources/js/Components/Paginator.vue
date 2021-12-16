@@ -1,13 +1,20 @@
 <template>
-    <Link v-for="link in links" :key="link.url">{{ link.label }}</Link>
+    <div v-for="car in cars" :key="car.id">
+      <Link :href="`/cars/${car.model}`">
+        {{ car.model }}
+      </Link>
+    </div>
+    <!-- <Link v-for="car in cars" :key="car.model">{{ car.model }}</Link> -->
 </template>
 <script setup> 
     // Composition API
     import { Link } from '@inertiajs/inertia-vue3';
 
     const props = defineProps({
-        links: Object
+        cars: Array
     });
 
-
+    props:{
+        cars
+    }
 </script>

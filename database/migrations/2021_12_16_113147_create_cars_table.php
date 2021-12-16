@@ -13,11 +13,12 @@ class CreateCarsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cars',function(Blueprint $table){
-            $table -> id();
-            $table -> string('model');
-            $table -> src('image');
-            $table -> str('occupation');
+        Schema::create('cars', function (Blueprint $table) {
+            $table->id();
+            $table->string('model');
+            $table->string('img');
+            $table->string('occupied');
+            $table->timestamps();
         });
     }
 
@@ -28,6 +29,6 @@ class CreateCarsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('cars');
+        Schema::dropIfExists('cars');
     }
 }

@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/cars', [CarController::class, 'index']);
+Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
+Route::post('/reservation', [CarController::class, 'succeed'])->name('reservations.store');
 
-Route::get('/users/{user}', [CarController::class, 'show']);
+Route::get('/cars/{car}', [CarController::class, 'show'])->name('cars.show');
